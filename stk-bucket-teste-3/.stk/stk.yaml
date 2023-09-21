@@ -1,0 +1,29 @@
+schema-version: v2
+kind: manifest
+metadata:
+  name: stk-bucket-teste-3
+  description: https://github.com/hyodo-stk/stk-bucket-teste-3
+  stack-version-id: 01HAWPJ44VJQYE4B6H0HW3HHAP
+  stack: python-stack@1.1.0
+spec:
+  type: infra
+  plugins:
+    - name: sandbox-hy-python/python-stack@1.1.0/s3-bucket@0.0.1
+      alias: s3-bucket-1695327878790
+      plugin-version-id: 01HAWPC63ANJGVSQXD3PJT2CMF
+      stack-version-id: 01HAWPJ44VJQYE4B6H0HW3HHAP
+      type: infra
+      inputs:
+        name: s3-bucket-3
+      inputs-envs: {}
+      connections:
+        generates:
+          - type: aws-s3-conn
+            selected: conn-bucket-3
+            alias: created-s3-bucket
+        requires: []
+      links:
+        generates: []
+  global-inputs: {}
+  global-computed-inputs: {}
+  repository: https://github.com/hyodo-stk/stk-bucket-teste-3
